@@ -1,0 +1,1106 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Together Forever — Happy Anniversary</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Elegant Luxury Serif & Modern Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Playfair Display", "serif"],
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                blue: "#4facfe",
+                pink: "#ff0844",
+                lavender: "#c471ed",
+                peach: "#f12711",
+                amber: "#f5af19",
+                slate: "#1e293b",
+              },
+            },
+            animation: {
+              "fluid-slow-1": "fluid-blob-1 25s infinite alternate ease-in-out",
+              "fluid-slow-2": "fluid-blob-2 30s infinite alternate ease-in-out",
+              "fluid-slow-3": "fluid-blob-3 22s infinite alternate ease-in-out",
+              "spin-slow": "spin 20s linear infinite",
+              "bounce-slow": "bounce 3s infinite",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Modern Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #fcfcfc;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(196, 113, 237, 0.25);
+        border-radius: 99px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(196, 113, 237, 0.45);
+      }
+
+      /* Pristine 3D Light Liquid Glass (iOS-inspired Frosted Look) */
+      .liquid-glass-light {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(30px) saturate(190%);
+        -webkit-backdrop-filter: blur(30px) saturate(190%);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow:
+          0 10px 40px -10px rgba(30, 41, 59, 0.05),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6),
+          inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+      }
+
+      .liquid-glass-card {
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(25px) saturate(170%);
+        -webkit-backdrop-filter: blur(25px) saturate(170%);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow:
+          0 8px 30px rgba(30, 41, 59, 0.03),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .liquid-glass-card:hover {
+        background: rgba(255, 255, 255, 0.85);
+        border-color: rgba(255, 255, 255, 0.9);
+        transform: translateY(-8px) scale(1.015);
+        box-shadow:
+          0 30px 60px -15px rgba(241, 39, 17, 0.1),
+          0 10px 30px -10px rgba(79, 172, 254, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      }
+
+      /* Abstract Organic Liquid Blob Animations */
+      @keyframes fluid-blob-1 {
+        0% {
+          transform: translate(0px, 0px) scale(1) rotate(0deg);
+        }
+        33% {
+          transform: translate(120px, -180px) scale(1.3) rotate(120deg);
+        }
+        66% {
+          transform: translate(-80px, 140px) scale(0.8) rotate(240deg);
+        }
+        100% {
+          transform: translate(0px, 0px) scale(1) rotate(360deg);
+        }
+      }
+      @keyframes fluid-blob-2 {
+        0% {
+          transform: translate(0px, 0px) scale(1.2) rotate(180deg);
+        }
+        50% {
+          transform: translate(-140px, 160px) scale(0.7) rotate(360deg);
+        }
+        100% {
+          transform: translate(100px, -100px) scale(1.3) rotate(0deg);
+        }
+      }
+      @keyframes fluid-blob-3 {
+        0% {
+          transform: translate(0px, 0px) scale(0.85) rotate(0deg);
+        }
+        50% {
+          transform: translate(160px, 120px) scale(1.2) rotate(-180deg);
+        }
+        100% {
+          transform: translate(-120px, -160px) scale(0.85) rotate(0deg);
+        }
+      }
+
+      /* Smooth reveal transitions */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Elegant Custom Cursor (Light-Theme Adaptable) */
+      .custom-cursor {
+        width: 28px;
+        height: 28px;
+        border: 1.5px solid rgba(30, 41, 59, 0.6);
+        border-radius: 50%;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 9999;
+        transition:
+          width 0.2s,
+          height 0.2s,
+          background-color 0.2s,
+          border-color 0.2s;
+        mix-blend-mode: multiply;
+      }
+
+      .cursor-hover {
+        width: 52px;
+        height: 52px;
+        background-color: rgba(196, 113, 237, 0.15);
+        border-color: rgba(196, 113, 237, 0.8);
+      }
+
+      /* Dynamic Heart Container */
+      #heart-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 100;
+      }
+
+      /* Metallic shine on interactive actions */
+      .shine-button {
+        position: relative;
+        overflow: hidden;
+      }
+      .shine-button::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -60%;
+        width: 30%;
+        height: 200%;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: rotate(25deg);
+        transition: all 0.75s ease;
+      }
+      .shine-button:hover::after {
+        left: 130%;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#fafafd] text-slate-800 font-sans overflow-x-hidden relative"
+  >
+    <audio id="love-song" loop src="./Nazar Na Lage.mp3"></audio>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor hidden md:block"></div>
+
+    <!-- Floating Rising Hearts Ambiance -->
+    <div id="heart-container"></div>
+
+    <!-- BACKGROUND ENGINE: Dynamic Scroll-Controlled Liquid Gradients -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <!-- Solid pristine base to secure high light contrast -->
+      <div class="absolute inset-0 bg-[#ffffff] opacity-90"></div>
+
+      <!-- Smoothly blending fluid elements inspired by reference assets -->
+      <div
+        id="bg-blob-1"
+        class="absolute top-[-5%] left-[-10%] w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-brand-blue/30 via-brand-lavender/25 to-brand-pink/20 blur-[120px] animate-fluid-slow-1 transition-all duration-1000"
+      ></div>
+      <div
+        id="bg-blob-2"
+        class="absolute bottom-[10%] right-[-10%] w-[750px] h-[750px] rounded-full bg-gradient-to-br from-brand-pink/20 via-brand-peach/25 to-brand-amber/15 blur-[140px] animate-fluid-slow-2 transition-all duration-1000"
+      ></div>
+      <div
+        id="bg-blob-3"
+        class="absolute top-[35%] right-[20%] w-[500px] h-[500px] rounded-full bg-gradient-to-tl from-brand-lavender/20 via-brand-blue/15 to-pink-300/30 blur-[100px] animate-fluid-slow-3 transition-all duration-1000"
+      ></div>
+
+      <!-- Elegant Light Grid Lining -->
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.015)_1px,transparent_1px)] bg-[size:5rem_5rem]"
+      ></div>
+    </div>
+
+    <!-- FRONTEND MASTER CONTENT SYSTEM -->
+    <div class="relative z-10 w-full min-h-screen flex flex-col items-center">
+      <!-- FLOATING NAVIGATION WITH INTEGRATED AUDIO ENGINE -->
+      <header
+        class="fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl h-16 liquid-glass-light rounded-full flex items-center justify-between px-6 z-50 transition-all duration-300 border border-white/60"
+      >
+        <div class="flex items-center gap-2.5">
+          <svg
+            class="w-7 h-7 text-brand-pink animate-pulse"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+            />
+          </svg>
+          <span
+            class="font-serif tracking-[0.2em] text-slate-800 font-extrabold text-xs uppercase"
+            >Love Story</span
+          >
+        </div>
+
+        <nav
+          class="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase font-bold text-slate-600"
+        >
+          <a
+            href="#story"
+            class="hover:text-brand-pink transition-colors duration-300"
+            >The Journey</a
+          >
+          <a
+            href="#gallery"
+            class="hover:text-brand-pink transition-colors duration-300"
+            >Memories</a
+          >
+          <a
+            href="#wishes"
+            class="hover:text-brand-pink transition-colors duration-300"
+            >Wishing Well</a
+          >
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button
+            id="music-btn"
+            class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/40 border border-slate-200 hover:border-brand-pink/50 transition-all text-[11px] font-bold tracking-wider text-slate-700"
+          >
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-pink opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2 w-2 bg-brand-pink"
+              ></span>
+            </span>
+            <span id="music-status">Ambient Sound ON</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- HERO SECTION -->
+      <section
+        id="hero"
+        class="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 overflow-hidden"
+      >
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+          <!-- Floating Decorative Tag -->
+          <div
+            class="reveal inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 border border-pink-100 shadow-sm mb-8"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-brand-pink animate-ping"
+            ></span>
+            <span
+              class="text-brand-pink text-[11px] font-extrabold tracking-[0.25em] uppercase"
+              >A Decade of Beautiful Wonders</span
+            >
+          </div>
+
+          <!-- Main Fluid Typographic Statement -->
+          <h1
+            class="reveal font-serif text-5xl md:text-8xl lg:text-9xl tracking-tight leading-[1.05] mb-6 text-slate-900 font-extrabold"
+          >
+            Happy
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink via-brand-lavender to-brand-blue"
+              >Anniversary</span
+            >
+          </h1>
+
+          <!-- Personalized Names with elegant sub-heading -->
+          <p
+            class="reveal font-serif text-2xl md:text-4xl italic text-brand-lavender mb-10 font-medium"
+          >
+            To the beautiful souls, Arthur & Evelyn
+          </p>
+
+          <!-- Liquid Frosted Counter Panel (With updated color-matching details) -->
+          <div
+            class="reveal w-full max-w-2xl liquid-glass-light rounded-[2.5rem] p-6 md:p-8 flex justify-around items-center gap-4 relative overflow-hidden"
+          >
+            <div class="text-center relative z-10">
+              <span
+                id="years"
+                class="block font-serif text-4xl md:text-5xl lg:text-6xl text-brand-pink font-extrabold"
+                >7</span
+              >
+              <span
+                class="text-[10px] md:text-xs tracking-[0.2em] text-slate-500 uppercase font-bold mt-1 block"
+                >Years Spent</span
+              >
+            </div>
+            <div class="h-12 w-[1.5px] bg-slate-200/60"></div>
+            <div class="text-center relative z-10">
+              <span
+                id="months"
+                class="block font-serif text-4xl md:text-5xl lg:text-6xl text-brand-lavender font-extrabold"
+                >84</span
+              >
+              <span
+                class="text-[10px] md:text-xs tracking-[0.2em] text-slate-500 uppercase font-bold mt-1 block"
+                >Months Lived</span
+              >
+            </div>
+            <div class="h-12 w-[1.5px] bg-slate-200/60"></div>
+            <div class="text-center relative z-10">
+              <span
+                id="days"
+                class="block font-serif text-4xl md:text-5xl lg:text-6xl text-brand-blue font-extrabold"
+                >2,556</span
+              >
+              <span
+                class="text-[10px] md:text-xs tracking-[0.2em] text-slate-500 uppercase font-bold mt-1 block"
+                >Days in Love</span
+              >
+            </div>
+          </div>
+
+          <!-- Modern Actions -->
+          <div
+            class="reveal mt-12 flex flex-col sm:flex-row items-center gap-5"
+          >
+            <button
+              onclick="triggerLoveShower()"
+              class="shine-button px-8 py-4 bg-gradient-to-r from-brand-pink via-brand-lavender to-brand-blue text-white font-extrabold text-xs tracking-widest uppercase rounded-full shadow-lg hover:shadow-brand-pink/25 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
+            >
+              Shower Love 🎉
+            </button>
+            <a
+              href="#story"
+              class="px-8 py-4 rounded-full bg-white/70 hover:bg-white border border-slate-200 text-xs font-bold tracking-widest uppercase text-slate-700 hover:text-brand-pink transition-all duration-300 shadow-sm"
+            >
+              Discover Journey
+            </a>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div
+          class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+        >
+          <span
+            class="text-[9px] tracking-[0.3em] uppercase text-slate-400 font-bold"
+            >Scroll Down</span
+          >
+          <svg
+            class="w-4 h-4 text-brand-pink animate-bounce-slow"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <!-- EDITORIAL STORY BLOCK -->
+      <section
+        id="story"
+        class="relative w-full max-w-6xl px-6 py-24 md:py-32 flex flex-col items-center"
+      >
+        <div class="text-center mb-16 max-w-2xl">
+          <span
+            class="text-xs font-extrabold tracking-[0.25em] text-brand-pink uppercase block mb-3"
+            >Our Chapter Book</span
+          >
+          <h2 class="font-serif text-4xl md:text-5xl text-slate-900 font-bold">
+            The Seven-Year Milestone
+          </h2>
+          <div
+            class="w-16 h-[3px] bg-gradient-to-r from-brand-pink to-brand-blue mx-auto mt-6 rounded-full"
+          ></div>
+        </div>
+
+        <!-- Light Theme Glass Board -->
+        <div
+          class="reveal w-full liquid-glass-light rounded-[2.5rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden border border-white/70"
+        >
+          <div
+            class="absolute -top-12 -left-12 w-64 h-64 rounded-full bg-brand-blue/10 blur-[60px]"
+          ></div>
+
+          <div
+            class="w-full lg:w-1/2 flex flex-col gap-6 relative z-10 text-left"
+          >
+            <h3
+              class="font-serif text-3xl md:text-4xl text-slate-950 font-bold leading-snug"
+            >
+              Building a home of
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-lavender"
+                >limitless kindness</span
+              >, laughter, and support.
+            </h3>
+            <p
+              class="text-slate-600 leading-relaxed text-sm md:text-base font-medium"
+            >
+              Ten years ago, a beautiful partnership bloomed. Every single
+              chapter since has been characterized by mutual encouragement,
+              shared laughter over tiny things, and deep, structural trust. It's
+              a rare and gorgeous reality to watch.
+            </p>
+            <p
+              class="text-slate-600 leading-relaxed text-sm md:text-base font-medium"
+            >
+              To look back over this vibrant timeline is to see a beautiful
+              landscape of memories — from late night chats, weekend getaways,
+              and small quiet routines that make every single ordinary day
+              spectacular.
+            </p>
+            <div class="flex items-center gap-4 mt-4">
+              <div
+                class="w-12 h-12 rounded-full bg-brand-pink/10 border border-brand-pink/20 flex items-center justify-center text-lg shadow-sm"
+              >
+                🌸
+              </div>
+              <div>
+                <p
+                  class="text-xs font-extrabold text-slate-800 tracking-widest uppercase"
+                >
+                  Manish & Anjali
+                </p>
+                <p class="text-[10px] text-slate-500 font-bold">
+                  ESTABLISHED JUNE 12, 2019
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Portrait Frame -->
+          <div class="w-full lg:w-1/2 flex justify-center relative">
+            <div
+              class="relative w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden liquid-glass-card p-3 group border border-white/80 shadow-md"
+            >
+              <div
+                class="relative w-full h-full rounded-2xl overflow-hidden bg-slate-100 flex flex-col items-center justify-center text-center transition-all duration-700"
+              >
+                <!-- Background gradient block -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-b from-brand-lavender/30 to-slate-200 z-0"
+                ></div>
+
+                <!-- Elegant Couple Image Placeholder -->
+                <img
+                  id="couple-main-img"
+                  class="absolute inset-0 w-full h-full object-cover z-10 opacity-90 group-hover:scale-105 group-hover:rotate-1 transition-all duration-1000"
+                  src="wed_stand.jpg"
+                  alt="Manish & Anjali"
+                />
+
+                <!-- High Contrast Glass Overlay Info Plate -->
+                <div
+                  class="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-white/80 backdrop-blur-md border border-white/60 z-20 text-left shadow-sm"
+                >
+                  <p
+                    class="text-[9px] tracking-widest text-brand-pink uppercase font-extrabold"
+                  >
+                    WEDDING DAY
+                  </p>
+                  <p class="font-serif text-lg text-slate-800 font-bold">
+                    Sunny June 12
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENTO MEDIA GALLERY (Light aesthetic accented with vibrant frames) -->
+      <section
+        id="gallery"
+        class="relative w-full max-w-6xl px-6 py-24 md:py-32"
+      >
+        <div class="text-center mb-16 max-w-2xl mx-auto">
+          <span
+            class="text-xs font-extrabold tracking-[0.25em] text-brand-lavender uppercase block mb-3"
+            >Snapshots of Magic</span
+          >
+          <h2 class="font-serif text-4xl md:text-5xl text-slate-900 font-bold">
+            The Memory Bento
+          </h2>
+          <p class="text-slate-500 mt-4 text-sm md:text-base font-medium">
+            A playful grid of outstanding memories, weekend ventures, and lovely
+            shared moments.
+          </p>
+          <div
+            class="w-16 h-[3px] bg-gradient-to-r from-brand-lavender to-brand-amber mx-auto mt-6 rounded-full"
+          ></div>
+        </div>
+
+        <!-- Responsive Bento Grid Layout -->
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:auto-rows-[250px]">
+          <div
+            class="reveal md:col-span-2 md:row-span-2 h-[350px] md:h-full rounded-3xl overflow-hidden liquid-glass-card p-3 relative group border border-white/60"
+          >
+            <div
+              class="w-full h-full rounded-2xl overflow-hidden relative bg-slate-100 shadow-inner"
+            >
+              <img
+                src="wed_sit.jpg"
+                class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-all duration-1000"
+                alt="Special Day"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"
+              ></div>
+              <div class="absolute bottom-6 left-6 right-6 z-20">
+                <span
+                  class="px-3 py-1 rounded-full bg-brand-pink/20 border border-brand-pink/30 text-[9px] tracking-widest uppercase font-extrabold text-white"
+                  >THE WEDDING</span
+                >
+                <h3
+                  class="font-serif text-2xl md:text-3xl text-white mt-3 font-bold"
+                >
+                  Where Dreams Met Reality
+                </h3>
+                <p class="text-stone-200 text-xs mt-1 font-light max-w-md">
+                  Surrounded by everything we love, pledging an incredible
+                  future ahead together.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="reveal md:row-span-2 h-[350px] md:h-full rounded-3xl overflow-hidden liquid-glass-card p-3 relative group border border-white/60"
+          >
+            <div
+              class="w-full h-full rounded-2xl overflow-hidden relative bg-slate-100 shadow-inner"
+            >
+              <img
+                src="horse.jpg"
+                class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-all duration-1000"
+                alt="Beautiful sun"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"
+              ></div>
+              <div class="absolute bottom-6 left-6 right-6 z-20">
+                <span
+                  class="px-3 py-1 rounded-full bg-brand-blue/20 border border-brand-blue/30 text-[9px] tracking-widest uppercase font-extrabold text-white"
+                  >GETAWAYS</span
+                >
+                <h3 class="font-serif text-xl text-white mt-3 font-bold">
+                  Sunset Walks
+                </h3>
+                <p class="text-stone-200 text-xs mt-1 font-light">
+                  Losing ourselves in new sights, exploring infinite beauty hand
+                  in hand.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="reveal h-[350px] md:h-full rounded-3xl overflow-hidden liquid-glass-card p-3 relative group border border-white/60"
+          >
+            <div
+              class="w-full h-full rounded-2xl overflow-hidden relative bg-slate-100 shadow-inner"
+            >
+              <img
+                src="couple.jpg"
+                class="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-all duration-1000"
+                alt="Casual smiles"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"
+              ></div>
+              <div class="absolute bottom-6 left-6 right-6 z-20">
+                <h3 class="font-serif text-lg text-white font-bold">
+                  Everyday Joy
+                </h3>
+                <p class="text-stone-200 text-[11px] mt-1 font-light">
+                  Finding true harmony in coffee mornings and cozy winter walks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="reveal md:col-span-2 h-[250px] md:h-full rounded-3xl overflow-hidden liquid-glass-card p-3 relative group border border-white/60"
+          >
+            <div
+              class="w-full h-full rounded-2xl overflow-hidden relative bg-slate-100 shadow-inner"
+            >
+              <img
+                src="Fam.jpeg"
+                class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-all duration-1000"
+                alt="Venture outdoors"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"
+              ></div>
+              <div class="absolute bottom-6 left-6 right-6 z-20">
+                <span
+                  class="px-3 py-1 rounded-full bg-brand-amber/20 border border-brand-amber/30 text-[9px] tracking-widest uppercase font-extrabold text-white"
+                  >ADVENTURE</span
+                >
+                <h3 class="font-serif text-xl text-white mt-3 font-bold">
+                  High Hills & Free Hearts
+                </h3>
+                <p class="text-stone-200 text-xs mt-1 font-light">
+                  Proving again and again that there is no mountaintop we can't
+                  reach together.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </section>
+
+      <!-- INTERACTIVE BLESSING SYSTEM -->
+      <section
+        id="wishes"
+        class="relative w-full max-w-4xl px-6 py-24 md:py-32 flex flex-col items-center"
+      >
+        <div class="text-center mb-16 max-w-2xl">
+          <span
+            class="text-xs font-extrabold tracking-[0.25em] text-brand-pink uppercase block mb-3"
+            >Leave a Token</span
+          >
+          <h2 class="font-serif text-4xl md:text-5xl text-slate-900 font-bold">
+            The Wishing Well
+          </h2>
+          <div
+            class="w-16 h-[3px] bg-gradient-to-r from-brand-pink to-brand-blue mx-auto mt-6 rounded-full"
+          ></div>
+        </div>
+
+        <!-- Dual Columns -->
+        <div
+          class="reveal w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-start"
+        >
+          <!-- Interaction Portal -->
+          <div
+            class="md:col-span-5 liquid-glass-light rounded-[2.5rem] p-8 flex flex-col items-center text-center relative overflow-hidden border border-white/70"
+          >
+            <div
+              class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-pink via-brand-lavender to-brand-blue"
+            ></div>
+
+            <div
+              class="w-20 h-20 rounded-full bg-gradient-to-br from-brand-pink/10 to-brand-lavender/20 border border-white flex items-center justify-center mb-6 shadow-md"
+            >
+              <span class="text-3xl animate-bounce-slow">💖</span>
+            </div>
+
+            <h3 class="font-serif text-2xl text-slate-900 font-bold mb-4">
+              Send a Blessing
+            </h3>
+            <p class="text-slate-500 text-xs leading-relaxed mb-6 font-medium">
+              Tap the interaction button below to send warm, floating wishes
+              rising through the screen as gorgeous interactive heart elements.
+            </p>
+
+            <button
+              id="send-wish-heart"
+              class="shine-button px-8 py-4 w-full bg-gradient-to-r from-brand-pink to-brand-lavender text-white font-extrabold text-xs tracking-widest uppercase rounded-full shadow-md hover:shadow-brand-pink/20 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2"
+            >
+              <span>Send Heart Float</span>
+              <span>✨</span>
+            </button>
+
+            <!-- Dynamically increments -->
+            <div
+              class="mt-6 flex items-center gap-2 bg-white/40 px-4 py-2 rounded-full border border-slate-100"
+            >
+              <span
+                class="text-[10px] text-slate-500 uppercase tracking-widest font-extrabold"
+                >Wishes Received:</span
+              >
+              <span
+                id="wish-counter"
+                class="text-xs font-bold text-brand-pink font-mono"
+                >1,540</span
+              >
+            </div>
+          </div>
+
+          <!-- Custom Curated Note Board -->
+          <div class="md:col-span-7 flex flex-col gap-4">
+            <!-- Note 1 -->
+            <div
+              class="liquid-glass-card p-6 rounded-3xl border border-white/70"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p
+                    class="text-xs font-extrabold text-slate-800 tracking-widest uppercase"
+                  >
+                    From Beloved Family
+                  </p>
+                  <p class="text-[10px] text-slate-400 font-bold mt-1">
+                    "Absolute couple gold standards!"
+                  </p>
+                </div>
+                <span class="text-lg">🕯️</span>
+              </div>
+              <p
+                class="text-slate-600 text-xs mt-4 leading-relaxed font-medium"
+              >
+                Watching the warm support and unwavering smile you share with
+                everyone is inspiring. Seven years is an incredible testament to
+                real devotion. Cheers to the next grand decade!
+              </p>
+            </div>
+
+            <!-- Note 2 -->
+            <div
+              class="liquid-glass-card p-6 rounded-3xl border border-white/70"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p
+                    class="text-xs font-extrabold text-slate-800 tracking-widest uppercase"
+                  >
+                    From Friends
+                  </p>
+                  <p class="text-[10px] text-slate-400 font-bold mt-1">
+                    "A rare and timeless sort of devotion."
+                  </p>
+                </div>
+                <span class="text-lg">✨</span>
+              </div>
+              <p
+                class="text-slate-600 text-xs mt-4 leading-relaxed font-medium"
+              >
+                True commitment doesn't look like fireworks, it looks like quiet
+                coffee cups, warm morning hands, and shared steps.
+                Congratulations to my absolute favorites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER & BRAND MONOGRAM -->
+      <footer
+        class="w-full relative border-t border-slate-200/40 py-12 px-6 flex flex-col items-center justify-center text-center mt-auto z-10 bg-white/30 backdrop-blur-md"
+      >
+        <!-- Monogram badge -->
+        <div
+          class="w-16 h-16 rounded-full border border-slate-200 bg-white flex items-center justify-center mb-6 relative group shadow-sm"
+        >
+          <span
+            class="font-serif text-lg text-brand-pink font-bold italic tracking-wider"
+            >M & A</span
+          >
+          <div
+            class="absolute inset-0 rounded-full border border-brand-pink/20 animate-spin-slow group-hover:scale-105 transition-all duration-300"
+          ></div>
+        </div>
+
+        <p class="font-serif text-xl text-slate-800 italic mb-2">
+          Happiest 7-Year Anniversary Celebration
+        </p>
+        <p
+          class="text-[9px] text-slate-400 tracking-[0.2em] uppercase font-bold"
+        >
+          Handcrafted as a Token of Absolute Love • 2026
+        </p>
+
+        <div class="flex items-center gap-3 mt-6">
+          <span
+            class="text-[9px] font-extrabold px-3 py-1 bg-white border border-slate-100 rounded-full text-slate-600 shadow-sm"
+            >#LoveDecade</span
+          >
+          <span
+            class="text-[9px] font-extrabold px-3 py-1 bg-white border border-slate-100 rounded-full text-slate-600 shadow-sm"
+            >#Anjali&Manish</span
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- JAVASCRIPT SYSTEM ENGINE -->
+    <script>
+      // DOM Controls
+      const cursor = document.getElementById("custom-cursor");
+      const heartContainer = document.getElementById("heart-container");
+      const sendWishHeart = document.getElementById("send-wish-heart");
+      const wishCounter = document.getElementById("wish-counter");
+      const revealElements = document.querySelectorAll(".reveal");
+      const musicBtn = document.getElementById("music-btn");
+      const musicStatus = document.getElementById("music-status");
+
+      // Dynamic Background Elements (Blobs) for Scroll Color Shifts
+      const blob1 = document.getElementById("bg-blob-1");
+      const blob2 = document.getElementById("bg-blob-2");
+      const blob3 = document.getElementById("bg-blob-3");
+
+      // State Trackers
+      let wishCount = 1540;
+      let isMusicPlaying = false;
+      let audioCtx = null;
+      let osc = null;
+
+      // Custom Cursor movement logic
+      document.addEventListener("mousemove", (e) => {
+        if (cursor) {
+          cursor.style.left = `${e.clientX}px`;
+          cursor.style.top = `${e.clientY}px`;
+        }
+      });
+
+      // Add magnetic hovering responses to interactives
+      const interactives = document.querySelectorAll(
+        "button, a, .liquid-glass-card",
+      );
+      interactives.forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          cursor?.classList.add("cursor-hover"),
+        );
+        el.addEventListener("mouseleave", () =>
+          cursor?.classList.remove("cursor-hover"),
+        );
+      });
+
+      // Background Color Shift on Scroll
+      window.addEventListener("scroll", () => {
+        const scrollPercent =
+          window.scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight);
+
+        // Dynamically alter positions and filters based on scroll depth
+        if (scrollPercent < 0.3) {
+          // Hero state: Sky blues and light purples
+          blob1.style.transform = `translate(${scrollPercent * 100}px, 0px) scale(${1 + scrollPercent})`;
+          blob2.style.transform = `translate(0px, ${-scrollPercent * 100}px) scale(1)`;
+        } else if (scrollPercent < 0.6) {
+          // Story section state: Shift to Pink & Deep Lavenders
+          blob1.style.transform = `translate(${100 - scrollPercent * 200}px, -100px) scale(1.15)`;
+          blob2.style.transform = `translate(150px, ${-scrollPercent * 150}px) scale(1.2)`;
+          blob3.style.transform = `translate(${-scrollPercent * 100}px, 100px) scale(1.1)`;
+        } else {
+          // Wishing well state: Soft coral sunset warm colors
+          blob1.style.transform = `translate(-120px, -200px) scale(1)`;
+          blob2.style.transform = `translate(-100px, -300px) scale(1.4)`;
+          blob3.style.transform = `translate(200px, -150px) scale(1.3)`;
+        }
+      });
+
+      // Synthetic Audio Engine for Chimes
+      function initSynth() {
+        try {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          audioCtx = new AudioContext();
+        } catch (err) {
+          console.warn("Web Audio API not supported in this environment.");
+        }
+      }
+
+      function playHeartChime() {
+        if (!audioCtx) initSynth();
+        if (!audioCtx) return;
+
+        const oscNode = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+
+        oscNode.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+
+        // Warm pentatonic major chords
+        const frequencies = [523.25, 587.33, 659.25, 783.99, 880.0]; // C5, D5, E5, G5, A5
+        const chosenFreq =
+          frequencies[Math.floor(Math.random() * frequencies.length)];
+
+        oscNode.type = "sine";
+        oscNode.frequency.setValueAtTime(chosenFreq, audioCtx.currentTime);
+
+        // Smooth envelopes
+        gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(
+          0.001,
+          audioCtx.currentTime + 1.2,
+        );
+
+        oscNode.start();
+        oscNode.stop(audioCtx.currentTime + 1.2);
+      }
+
+      // Toggle Audio Ambient Drone
+      const song = document.getElementById("love-song");
+      musicBtn.addEventListener("click", () => {
+        if (song.paused) {
+          song.play();
+          musicStatus.textContent = "Music ON 🎵";
+        } else {
+          song.pause();
+          musicStatus.textContent = "Music OFF";
+        }
+      });
+
+      //   musicBtn.addEventListener("click", () => {
+      //     if (!audioCtx) initSynth();
+      //     if (!audioCtx) return;
+
+      //     if (!isMusicPlaying) {
+      //       isMusicPlaying = true;
+      //       musicStatus.textContent = "Ambient Sound ON";
+      //       musicBtn.classList.add("border-brand-pink");
+
+      //       // Low atmospheric drone frequency
+      //       osc = audioCtx.createOscillator();
+      //       const droneGain = audioCtx.createGain();
+      //       osc.type = "sine";
+      //       osc.frequency.setValueAtTime(220, audioCtx.currentTime); // Soft A3 warm frequency
+      //       droneGain.gain.setValueAtTime(0.03, audioCtx.currentTime);
+      //       osc.connect(droneGain);
+      //       droneGain.connect(audioCtx.destination);
+      //       osc.start();
+      //     } else {
+      //       isMusicPlaying = false;
+      //       musicStatus.textContent = "Ambient Sound OFF";
+      //       musicBtn.classList.remove("border-brand-pink");
+      //       if (osc) {
+      //         try {
+      //           osc.stop();
+      //         } catch (e) {}
+      //       }
+      //     }
+      //   });
+
+      // Trigger Love Shower
+      function triggerLoveShower() {
+        playHeartChime();
+        for (let i = 0; i < 35; i++) {
+          setTimeout(() => createHeart(), i * 65);
+        }
+      }
+
+      function createHeart(customX = null, customY = null) {
+        const heart = document.createElement("div");
+        // Vibrant colored SVG hearts to complement the light backdrop
+        heart.innerHTML = `<svg class="w-8 h-8 text-brand-pink fill-current filter drop-shadow-sm" style="color: ${["#ff0844", "#c471ed", "#ff758c", "#f12711"][Math.floor(Math.random() * 4)]}" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`;
+        heart.classList.add(
+          "absolute",
+          "pointer-events-none",
+          "transition-all",
+        );
+
+        const startX =
+          customX !== null ? customX : Math.random() * window.innerWidth;
+        const startY = customY !== null ? customY : window.innerHeight + 50;
+        const size = 15 + Math.random() * 22;
+        const rotation = (Math.random() - 0.5) * 40;
+        const duration = 2500 + Math.random() * 2500;
+        const endX = startX + (Math.random() - 0.5) * 280;
+
+        heart.style.left = `${startX}px`;
+        heart.style.top = `${startY}px`;
+        heart.style.width = `${size}px`;
+        heart.style.height = `${size}px`;
+        heart.style.transform = `rotate(${rotation}deg)`;
+        heart.style.opacity = "0.9";
+
+        heartContainer.appendChild(heart);
+
+        const startTime = performance.now();
+        function animateHeart(now) {
+          const elapsed = now - startTime;
+          const progress = elapsed / duration;
+
+          if (progress < 1) {
+            const currentY = startY - (startY + 100) * progress;
+            const currentX =
+              startX + (endX - startX) * Math.sin(progress * Math.PI);
+            const currentOpacity = 0.9 * (1 - progress);
+
+            heart.style.transform = `translate(${currentX - startX}px, ${currentY - startY}px) rotate(${rotation + progress * 90}deg) scale(${1 - progress * 0.4})`;
+            heart.style.opacity = currentOpacity;
+
+            requestAnimationFrame(animateHeart);
+          } else {
+            heart.remove();
+          }
+        }
+        requestAnimationFrame(animateHeart);
+      }
+
+      sendWishHeart.addEventListener("click", (e) => {
+        wishCount++;
+        wishCounter.textContent = wishCount.toLocaleString();
+
+        const rect = sendWishHeart.getBoundingClientRect();
+        const clickX = rect.left + rect.width / 2;
+        const clickY = rect.top;
+
+        playHeartChime();
+        createHeart(clickX, clickY);
+
+        for (let i = 0; i < 4; i++) {
+          setTimeout(
+            () => createHeart(clickX + (Math.random() - 0.5) * 80, clickY - 20),
+            i * 50,
+          );
+        }
+      });
+
+      // IntersectionObserver for elements
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px",
+        },
+      );
+
+      revealElements.forEach((el) => revealObserver.observe(el));
+      document.getElementById("music-btn").click(); // Auto-start music on load
+      triggerLoveShower();
+
+      // Initial setup trigger on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          revealElements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+              el.classList.add("active");
+            }
+          });
+        }, 350);
+      });
+    </script>
+  </body>
+</html>
